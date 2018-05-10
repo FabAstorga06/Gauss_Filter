@@ -5,11 +5,11 @@
 
 int main(int argc, char** argv )  {
 
-    /* Se checkean los parametros de entrada */    
+    /* Se checkean los parametros de entrada */
     if (argc != PARAMS) {
     	printf("Inserte los parametros necesarios...\n");
 	exit(1);
-    }	
+    }
     int kernel_size = atoi(argv[1]);
 
     /****************************************************************/
@@ -19,7 +19,8 @@ int main(int argc, char** argv )  {
     std::cout << "Cargando imagen..." << std::endl;
     Image _img = load_image(argv[2]);
     std::cout << "Aplicando filtro Gaussian Blur..." << std::endl;
-    Image _new_img = apply_gaussian_filter(_img, _kernel);
+    //Image _new_img = apply_gaussian_filter(_img, _kernel);
+
     std::cout << "Guardando imagen..." << std::endl;
     save_image(_new_img, argv[3]);
     std::cout << "Listo!" << std::endl;

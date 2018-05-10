@@ -3,6 +3,20 @@
 
 /************************************************************************************/
 
+void divide_matrix (Image &img, Matrix &kernel){
+    int my_id, root_process, num_procs;
+    int root_process = 0;
+
+    int ierr = MPI_Init (0,0);
+
+    ierr = MPI_Comm_rank(MPI_COMM_WORLD, &my_id);
+    ierr = MPI_Comm_size(MPI_COMM_WORLD, &num_procs);
+
+
+}
+
+/************************************************************************************/
+
 Matrix calc_kernel(int height, int width, double sigma )  {
     Matrix kernel(height, Array(width));
     double res = 0.0;
@@ -48,6 +62,7 @@ Image apply_gaussian_filter(Image &img, Matrix &filter)  {
             }
         }
     }
+    MPI_Finalize();
     return new_img;
 }
 

@@ -4,6 +4,7 @@
 #include <assert.h>
 #include <cmath>
 #include <png++/png.hpp>
+#include <mpi.h>
 
 /* Constantes de utilidad */
 
