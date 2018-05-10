@@ -1,8 +1,11 @@
+/* Dependencias del programa */
 #include <iostream>
 #include <vector>
 #include <assert.h>
 #include <cmath>
 #include <png++/png.hpp>
+
+/* Constantes de utilidad */
 
 #define RGB 3
 #define PARAMS 4

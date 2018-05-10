@@ -15,13 +15,13 @@ int main(int argc, char** argv )  {
     /****************************************************************/
 
     /* Se aplica filtro a imagen */
-    Matrix filter = calc_kernel(kernel_size, kernel_size, 10.0);
+    Matrix _kernel = calc_kernel(kernel_size, kernel_size, 10.0);
     std::cout << "Cargando imagen..." << std::endl;
-    Image image = load_image(argv[2]);
+    Image _img = load_image(argv[2]);
     std::cout << "Aplicando filtro Gaussian Blur..." << std::endl;
-    Image newImage = apply_gaussian_filter(image, filter);
+    Image _new_img = apply_gaussian_filter(_img, _kernel);
     std::cout << "Guardando imagen..." << std::endl;
-    save_image(newImage, argv[3]);
+    save_image(_new_img, argv[3]);
     std::cout << "Listo!" << std::endl;
 
     return 0;
