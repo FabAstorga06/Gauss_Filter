@@ -3,25 +3,25 @@ SDIR = ./src
 ODIR = ./obj
 
 CC = gcc
+CXX = g++
 MPI = mpicc
-CFLAGS = -g -Wall -I$(IDIR) 
-OPENCV = `pkg-config --libs --cflags opencv`
+CFLAGS = -I$(IDIR) `libpng-config --cflags` 
+PNG = `libpng-config --ldflags`
 
 EXEC = main
 
-_DEPS = constants.h utils.c gauss_filter.c 
+_DEPS = 
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
 _OBJ = $(EXEC).o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
-LIBS = $(OPENCV)
 
-$(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS) $(LIBS)
+$(ODIR)/%.o: $(SDIR)/%.cpp $(DEPS)
+	$(CXX) -c -o $@ $< $(CFLAGS) 
 
 $(EXEC): $(OBJ)
-	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+	$(CXX) -o $@ $^ $(CFLAGS) $(PNG)
 
 .PHONY: clean
 clean:

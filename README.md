@@ -1,6 +1,6 @@
-# Cluster Beowulf
+# Filtro Gaussian Blur 
 
-Cluster Beowulf de cuatro nodos para agilizar algoritmos implementados en C para procesamiento de imágenes mediante una interfaz de paso de mensajes.
+Filtro Gaussian Blur en C++.
 
 ### Compilación
 Para compilar el código, dirígase a la carpeta donde se encuentra el archivo Makefile y ejecute el siguiente comando: 
@@ -8,5 +8,7 @@ Para compilar el código, dirígase a la carpeta donde se encuentra el archivo M
 
 ### Ejecución
 Para ejecutar el código, corra el ejecutable que se generó en la carpeta donde se encuentran los archivos, mediante el siguiente comando: 
-* $ ./cluster
+* $ ./main 35 img/android.png img/z.png
+
+donde el primer parámetro corresponde a las dimensiones del kernel, el segundo parámetro es la imagen para aplicarle el filtro y el tercer parámetro corresponde a la imagen resultante.
 
